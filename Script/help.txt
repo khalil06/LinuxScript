@@ -1,0 +1,13 @@
+Afficher les caractéristiques hardware de votre machine via les
+commandes ps et top
+-t pour lancer la commande top
+-p pour lancer la commande ps -aux
+-r afin d’afficher uniquement les processus lancé par l’utilisateur root
+-u afin d’afficher uniquement les 5 processus les plus gourmands en terme de cpu.
+-h ou –help pour afficher le help
+-g pour afficher un menu graphique (exemple via YAD )
+-m pour afficher un menu textuel (menu en boucle)
+-s FICHIER pour sauvegarder les informations les plus pertinentes (en filtrant) dans un fichier passé en argument
+-v affiche la verion et les noms des auteurs
+-o FICHIER pour afficher les informations les plus pertinentes dans un fichier passé en argument (si le fichier n’existe pas un message d’erreur doit etre affiché)
+-f MOT_CLE pour afficher les lignes contenant le MOT_CLE à partir d’ un fichier. Cette option doit etre utilisé avec l’option -o

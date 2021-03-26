@@ -1,0 +1,6 @@
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  33691 khalil    20   0   11.0g 695772 128120 S  76.5   8.7  21:24.99 Web Con+
+   3222 khalil    20   0 4075956 519544 151820 S  35.3   6.5 289:50.10 firefox
+   1662 khalil     9 -11 2803820  10036   7144 S  11.8   0.1  77:41.33 pulseau+
+   1777 root      20   0  433972  70292  51336 S  11.8   0.9 181:22.67 Xorg
+  53837 khalil    20   0   21896   3896   3180 R  11.8   0.0   0:00.03 top
