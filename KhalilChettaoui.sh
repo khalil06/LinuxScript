@@ -5,41 +5,19 @@ source ./yad.sh
 
 #echo "${@}"
 case ${1} in
-	-t)
-		top
-		exit 0
-		;;
-	-p)
-		ps -aux
-		exit 0
-		;;
-
-	-r)
-		ps -U root -u root u
-		;;
-
-	-u)
+	-t) top ;;
+	-p) ps -aux ;;
+	-r) ps -U root -u root u ;;
+	-u)	watch "ps aux | sort -nrk 3,3 | head -n 5" ;;
 		#top | head -n 12
 		#ps -aux --sort -pcpu
-		watch "ps aux | sort -nrk 3,3 | head -n 5"
-		;;
-	-h)
-		cat help.txt
-		;;
-	-m)
+	-h|-help) cat help.txt ;;
+	-m) function_menu ;;
 		#exec ./test.sh
-		function_menu
-		;;
-	-g)
-		function_g
-		;;
-	-v)
-		cat version.txt
-		;;
-	-s)
-		top -b -n 12 | head -n 12 | sed -n '7,12p' > top-output.txt
+	-g) function_g ;;
+	-v) cat version.txt ;;
+	-s)	top -b -n 12 | head -n 12 | sed -n '7,12p' > top-output.txt	;;
 		#ps -aux --sort -pcpu | head -n 5 1> ${2}
-		;;
 	-o)
 		if [[ -f "${2}" && ${3} = "" ]]
 		then
@@ -56,14 +34,11 @@ case ${1} in
 		fi
 		
 		;;
-	-graph)
-		gnuplot -p GraphicScript.plt < top-output.txt
-		;;
-	-RTgraph)
-		gnuplot -p RTGraph.gnu < top-output.txt
-		;;
+	-graph)	gnuplot -p GraphicScript.plt < top-output.txt ;;
+	-RTgraph)	gnuplot -p RTGraph.gnu < top-output.txt	;;
+	-nf) neofetch ;;
 	*)
-		echo "error"
+		echo "error : You need to supply a valid option for more info check -help or -h" >&2
 		exit 1
 		;;
 esac
